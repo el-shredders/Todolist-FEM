@@ -14,5 +14,5 @@ The project is not yet finished!
 
 i still need to:
 - tweak the design for mobile version (very minor tweaks)
-- implement the theme dark theme design (a bit less minor)
 - Clear Completed utility in JS to be done
+- implement a drag and drop feature (not sure i will)
