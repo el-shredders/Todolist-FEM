@@ -12,10 +12,15 @@ const todoList = document.getElementById("todo-list");
 const itemsLeft = document.getElementById("items-left");
 const todoFilters = document.querySelectorAll("input[name='filter']");
 
+const themeSwitch = document.getElementById('theme-toggle');
+const themeLogos = document.querySelectorAll('.btn--theme img');
+// const mainContainer = document.querySelector('.main__container');
+
 /******************************/
 /***  EVENT LISTENERS       ***/
 /******************************/
 
+themeSwitch.addEventListener('click', themeSwitcher);
 
 todoInput.addEventListener("keyup", (e) => {
    if (e.key === "Enter") {
@@ -37,6 +42,20 @@ todoFilters.forEach((filter) => {
 /************************************/
 /***  event listeners and other callbacks  ***/
 /**********************************/
+
+function themeSwitcher(e) {
+   console.log(e.target);
+   //change the logo to sun or moon
+   themeLogos.forEach(logo => logo.classList.toggle("todo__elem--hide"));
+   //add theme class to main container
+   // document.body.classList.toggle("todo--darkMode");
+   if (!document.body.dataset.theme) {
+      document.body.dataset.theme = "darkTheme";
+   } else {
+      document.body.dataset.theme = "";
+   }
+
+}
 
 function filterCallback(e) {
    //update the current Filter and calls fonction that takes care of filters

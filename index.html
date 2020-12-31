@@ -20,8 +20,9 @@
             <header class="header">
                <section class="logo">
                   <h1 class="logo__title">TODO</h1>
-                  <button class="btn btn__toggle">
+                  <button class="btn btn--theme" id="theme-toggle">
                      <img src="./img/icon-moon.svg" alt="change" />
+                     <img class="todo__elem--hide" src="./img/icon-sun.svg" alt="change" />
                   </button>
                </section>
                <div class="todo__header">
@@ -50,10 +51,6 @@
                      
                         <input type="radio" name="filter" id="completed" value="completed" class="btn btn--bold">
                         <label class="btn btn--bold" for="completed">Completed</label>
-                     
-                  <!-- <button class="btn btn--bold all active">All</button>
-                  <button class="btn btn--bold active__items">Active</button>
-                  <button class="btn btn--bold completed">Completed</button> -->
                </div>
                </div>
             </main>
