@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style/reset.css" />
+      <link rel="stylesheet" href="style/style.css" />
+      <link
+         rel="icon"
+         type="img/png"
+         sizes="32x32"
+         href="./img/favicon-32x32.png"
+      />
+
+      <title>Frontend Mentor | Todo app</title>
+   </head>
+   <body class="preload-transitions">
+      <div class="main__container">
+         <section class="todo">
+            <header class="header">
+               <section class="logo">
+                  <h1 class="logo__title">TODO</h1>
+                  <button class="btn btn__toggle">
+                     <img src="./img/icon-moon.svg" alt="change" />
+                  </button>
+               </section>
+               <div class="todo__header">
+                  <div class="todo__circle">
+                  </div>
+                  <input type="text" class="todo__input" id="todo-input" placeholder="Create a new todo..." />
+               </div>
+            </header>
+
+            <main>
+               <ul class="todo__list" id="todo-list">
+                  <!-- items added by JavaScript -->
+               </ul>
+               <div class="todo__filters">
+                  <div class="todo__filters__sides">
+                     <p class="btn"><span id="items-left">5</span> item(s) left</p>
+                     <button class="btn btn--clear">Clear Completed</button>
+                  </div>
+                  <div class="todo__filters__center">
+                     
+                        <input type="radio" name="filter" id="all" value="all" class="btn btn--bold" checked>
+                        <label  class="btn btn--bold" for="all">All</label>
+                     
+                        <input type="radio" name="filter" id="active" value="active" class="btn btn--bold">
+                        <label class="btn btn--bold" for="active">Active</label>
+                     
+                        <input type="radio" name="filter" id="completed" value="completed" class="btn btn--bold">
+                        <label class="btn btn--bold" for="completed">Completed</label>
+                     
+                  <!-- <button class="btn btn--bold all active">All</button>
+                  <button class="btn btn--bold active__items">Active</button>
+                  <button class="btn btn--bold completed">Completed</button> -->
+               </div>
+               </div>
+            </main>
+
+            <footer>
+               <div class="attribution">
+                  <p>
+                  	Challenge by
+                  	<a
+                  	   href="https://www.frontendmentor.io?ref=challenge"
+                  	   target="_blank"
+                  	   >Frontend Mentor</a
+                  	>. Coded by <a href="#">Val G</a>.
+                  </p>
+               </div>
+            </footer>
+         </section>
+      </div>
+      <script type="text/javascript" defer>
+         document.addEventListener("DOMContentLoaded",function(){
+           let node = document.querySelector('.preload-transitions');
+           node.classList.remove('preload-transitions');
+         });
+       </script>
+      <script src="js/script.js"></script>
+   </body>
+</html>

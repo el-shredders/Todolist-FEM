@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+.preload-transitions * { 
+   -webkit-transition: none !important;
+   -moz-transition: none !important;
+   -ms-transition: none !important;
+   -o-transition: none !important;
+   transition: none !important;
+}
+
+html {
+   font-size: 62.5%;
+   font-family: 'Josefin Sans', sans-serif;
+   color: #494C6B;
+}
+
+body {
+   font-size: 1.8rem;
+}
+
+img {
+   max-width: 100%;
+   display: block;
+   pointer-events: none;
+}
+
+.btn {
+   cursor: pointer;
+   background-color: white;
+   border: none;
+   color: #9495a5;
+   font-size: 1.4rem;
+   line-height: 1.4rem;
+   font-family: inherit;
+}
+
+.btn--bold {
+   font-weight: bold;
+}
+
+.btn:focus {
+   outline: none;
+}
+
+.btn:hover {
+   color: #494C6B;
+}
+
+p.btn {
+   pointer-events: none;
+}
+
+p.btn:hover {
+   color: inherit;
+}
+
+.main__container {
+   width: 100vw;
+   min-height: 100vh;
+   background: url("../img/bg-desktop-light.jpg");
+   background-color: #FAFAFA;
+   background-repeat: no-repeat;
+   background-size: contain;
+   /* background-size: 100vw auto ; */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+}
+
+.todo {
+   width: 100%;
+   max-width: 540px;
+}
+
+.logo {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 7rem 0 0 0;
+}
+
+.logo__title {
+   color: white;
+   font-weight: bold;
+   font-size: 4rem;
+   line-height: 4rem;
+   letter-spacing: 15px;
+}
+
+.btn__toggle {
+   background-color: transparent;
+   border:none;
+}
+
+.todo__header {
+   width:100%;
+   background-color: white;
+   padding: 2rem 2.4rem;
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   margin-top: 4.8rem;
+   margin-bottom: 2.4rem;
+}
+
+.todo__circle, .todo__check {
+   width:24px;
+   height: 24px;
+   border: 1px solid #e3e4f1;
+   border-radius: 50%;
+}
+
+.todo__input, todo__input::-webkit-input-placeholder {
+   font-size: 1.8rem;
+   border: none;
+   font-family: inherit;
+   line-height: 2rem;
+   flex: 1 0;
+   margin-left: 2rem;;
+}
+
+.todo__input:focus {
+   outline: none;
+}
+
+.todo__list {
+   border-top: 1px solid #e3e4f1;
+   border-left: 1px solid #e3e4f1;
+   border-right: 1px solid #e3e4f1;
+
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.todo__elem {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   background-color: white;
+   border-bottom: 1px solid  #e3e4f1;
+   padding: 2rem 2.4rem;
+
+   
+}
+
+
+.todo__elem p {
+   flex: 1;
+   margin-left: 2rem;
+}
+
+.todo__elem--hide {
+   display: none;
+}
+
+.todo__elem--checked p {
+   color: #D1D2DA;
+   text-decoration: line-through;
+}
+
+.todo__check {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* background: white; */
+   transition: border .5s ease-in-out;
+
+}
+
+.todo__elem--checked .todo__check {
+    background: linear-gradient(to right, #55DDFF, #C058F3); 
+}
+
+.todo__elem:hover > .todo__check {
+    /* background: linear-gradient(to right, #55DDFF, #C058F3);  */
+    border: 1px solid #C058F3;
+}
+
+
+
+.todo__delete {
+   background: white;
+   border: none;
+  transform: scale(0); 
+   transition: transform .5s ease-in-out;
+
+}
+
+.todo__elem:hover > .todo__delete {
+  transform: scale(1);
+
+}
+
+
+
+
+.todo__filters__sides {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: white;
+   border-bottom: 1px solid  #e3e4f1;
+   border-left: 1px solid  #e3e4f1;
+   border-right: 1px solid  #e3e4f1;
+
+   padding: 2rem 2.4rem;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);   
+
+}
+
+.todo__filters__center {
+   background: white;
+   padding: 1.9rem 2.4rem;
+   display: inline-block;
+   border-bottom: 1px solid  #e3e4f1;
+   border-radius: 5px;
+   position: relative;
+   left: 50%;
+   transform: translate(-50%, -100%);
+}
+
+.todo__filters__center label {
+   margin: 0 0.8rem;
+}
+
+.todo__filters__center input[type="radio"] {
+   display: none;
+}
+
+.todo__filters__center input[type="radio"]:checked + label {
+      color: #3a7cfd;
+}
+
+footer {
+   position: absolute;
+   width: 100%;
+   bottom:  0;
+   left: 0;
+   right: 0;
+   padding: 1rem 0;
+   display: flex;
+   justify-content: center;
+}
