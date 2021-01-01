@@ -11,14 +11,26 @@ const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 const itemsLeft = document.getElementById("items-left");
 const todoFilters = document.querySelectorAll("input[name='filter']");
+const btnClear = document.getElementById('clear-completed');
+
 
 const themeSwitch = document.getElementById('theme-toggle');
 const themeLogos = document.querySelectorAll('.btn--theme img');
-// const mainContainer = document.querySelector('.main__container');
+
 
 /******************************/
 /***  EVENT LISTENERS       ***/
 /******************************/
+
+btnClear.addEventListener('click', () => {
+   const toRemove = todoArray.filter((obj) => obj.active === false);
+
+   if (toRemove.length > 0 &&  confirm(`You are about to remove ${toRemove.length} completed task. Are  you sure?`)) {
+      toRemove.forEach((elem) => {
+         removeElem(elem.DOMelem);
+      });
+   }
+});
 
 themeSwitch.addEventListener('click', themeSwitcher);
 
@@ -136,6 +148,7 @@ function updateCurrentId() {
 }
 
 /**  localSTorage functions **/
+/******************************/
 
 function getLocalStorage() {
    //update active count in case local is empty
@@ -195,6 +208,16 @@ function changeActiveStatus(elem) {
    updateActiveCount();
 }
 
+function removeElem(element) {
+   removeElemfromDom(element);
+   removeFromStorage(+element.id);
+   // need to update current Id to make sure that the next element will be created with the next highest unique id
+   updateCurrentId();
+   updateActiveCount();
+   //in case a filter is active, we update the display of elements accordingly
+   refreshFilters();
+}
+
 function removeElemfromDom(elem) {
    // remove element from DOM 
    elem.remove();
@@ -243,13 +266,7 @@ function addTodoElem(todoText, isNew = true) {
    const todo_delete = todoEl.querySelector(".todo__delete");
 
    todo_delete.addEventListener("click", function()  {
-      removeElemfromDom(todoEl);
-      removeFromStorage(+todoEl.id);
-      // need to update current Id to make sure that the next element will be created with the next highest unique id
-      updateCurrentId();
-      updateActiveCount();
-      //in case a filter is active, we update the display of elements accordingly
-      refreshFilters();
+      removeElem(todoEl);
    });
 
    // add an event listener to the check button
@@ -270,4 +287,26 @@ function addTodoElem(todoText, isNew = true) {
 /***  START OF INSTRUCTIONS     ***/
 /**********************************/
 
-getLocalStorage();
+function init() {
+   const starterList = [
+      "Complete online JavaScript course",
+      "Jog around the park 3x",
+      "10 minutes meditation",
+      "Read for 1 hour",
+      "Pick up groceries",
+      "Complete Todo App on Frontend Mentor",   
+   ];
+
+   if (localStorage.getItem("isFirstVisit") === null || localStorage.getItem("isFirstVisit") === false){
+      localStorage.setItem("isFirstVisit", true);
+      starterList.forEach((item) => {
+         addTodoElem(item);
+      });
+      changeActiveStatus(todoArray[0].DOMelem);
+   }
+   else {
+      getLocalStorage();
+   }
+}
+
+init();

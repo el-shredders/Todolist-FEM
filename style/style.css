@@ -334,3 +334,57 @@ footer {
    color: inherit;
    font-weight: bold;
 }
+
+@media (max-width: 738px) {
+   html {
+      font-size: 47%;
+   }
+   .main__container {
+      padding: 0 15%;
+      background: url("../img/bg-mobile-light.jpg");
+      background-color: #FAFAFA;
+      background-repeat: no-repeat;
+      background-size: contain;
+      /* background-size: 100vw auto ; */
+      /* display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative; */
+   }
+   
+   [data-theme="darkTheme"] .main__container {
+      background: url("../img/bg-mobile-dark.jpg");
+      background-color: #171823;
+      background-repeat: no-repeat;
+      background-size: contain;
+   }
+   
+
+   .todo {
+      width: 100%;
+      min-width: 327px;
+   }
+
+   .todo__filters__center {
+      position: static;
+      display:block;
+      transform: none;
+      margin-top: 1.5rem;
+      text-align: center;
+      border: 1px solid  #e3e4f1;
+      /* width: 100%; */
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+   }
+
+   [data-theme="darkTheme"] .todo__filters__center {
+      background: #25273D;
+      border: 1px solid #393A4B;
+   
+   }
+   footer {
+      /* position: static;  */
+       margin: 2rem 0;
+      text-align: center;
+      line-height: 3rem;
+   }
+}
