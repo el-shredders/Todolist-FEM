@@ -125,6 +125,7 @@ p.btn:hover {
    align-items: center;
    margin-top: 4.8rem;
    margin-bottom: 2.4rem;
+   border: 1px solid #e3e4f1;
 }
 
 .todo__header label {
@@ -134,6 +135,8 @@ p.btn:hover {
 
 [data-theme="darkTheme"] .todo__header {
  background-color: #25273D;
+ border: 1px solid #393A4B;
+
 }
 
 .todo__circle, .todo__check {
