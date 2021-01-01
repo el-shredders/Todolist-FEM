@@ -94,6 +94,8 @@ p.btn:hover {
    max-width: 540px;
 }
 
+
+
 .logo {
    display: flex;
    justify-content: space-between;
@@ -123,6 +125,11 @@ p.btn:hover {
    align-items: center;
    margin-top: 4.8rem;
    margin-bottom: 2.4rem;
+}
+
+.todo__header label {
+   position: absolute;
+   left: -25vw;
 }
 
 [data-theme="darkTheme"] .todo__header {
