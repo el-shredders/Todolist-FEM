@@ -16,13 +16,13 @@
    </head>
    <body class="preload-transitions" data-theme="darkTheme">
       <div class="main__container">
-         <section class="todo">
+         <div class="todo">
             <header class="header">
                <section class="logo">
                   <h2 class="logo__title">TODO</h2>
                   <button class="btn btn--theme" id="theme-toggle">
-                     <img class="todo__elem--hide" src="./img/icon-moon.svg" alt="change" />
-                     <img  src="./img/icon-sun.svg" alt="change" />
+                     <img class="todo__elem--hide" src="./img/icon-moon.svg" alt="moon icon to apply dark mode" />
+                     <img  src="./img/icon-sun.svg" alt="sun icon to apply light mode" />
                   </button>
                </section>
                <div class="todo__header">
@@ -32,7 +32,7 @@
                </div>
             </header>
 
-            <div class="main">
+            <main class="main">
                <ul class="todo__list" id="todo-list">
                   <!-- items added by JavaScript -->
                   
@@ -54,7 +54,7 @@
                         <label class="btn btn--bold" for="completed">Completed</label>
                </div>
                </div>
-            </div>
+            </main>
 
             <footer>
                <div class="attribution">
@@ -68,7 +68,7 @@
                   </p>
                </div>
             </footer>
-         </section>
+         </div>
       </div>
       <script>
          document.addEventListener("DOMContentLoaded",function(){
