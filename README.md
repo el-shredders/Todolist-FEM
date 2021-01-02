@@ -13,6 +13,5 @@ check the live site with on the following link:
 The project is not yet finished!
 
 i still need to:
-- tweak the design for mobile version (very minor tweaks)
-- Clear Completed utility in JS to be done
+
 - implement a drag and drop feature (not sure i will)
